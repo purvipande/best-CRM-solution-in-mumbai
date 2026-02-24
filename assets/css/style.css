@@ -394,43 +394,43 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
 #hero {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   background: #f5f8fd url("../img/intro-bg.jpg") center top no-repeat;
   background-size: cover;
-  padding-top: 40px;
+
+  /* FIXED HEADER OFFSET */
+  padding-top: 130px;   /* 90px header + spacing */
+  padding-bottom: 60px;
+
+  display: flex;
+  align-items: center;
 }
 
-@media (max-width: 991px) {
-  #hero {
-    height: auto;
-    padding: 40px 0 60px 0;
-  }
-
-  #hero .container {
-    height: auto !important;
-  }
-
-  #hero .intro-img {
-    width: 0%;
-  }
-}
-
+/* Desktop spacing */
 @media (min-width: 992px) {
   #hero .intro-info {
-    padding-top: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
+/* Tablet & Mobile */
 @media (max-width: 991px) {
+  #hero {
+    min-height: auto;
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
   #hero .intro-info {
     text-align: center;
-    padding-top: 20px;
+    padding-top: 0;
   }
 }
-
 #hero .intro-info h2 {
   color: #413e66;
   margin-bottom: 40px;
@@ -1808,11 +1808,10 @@ section {
 
 /* Gradient animated heading */
 .gradient-text {
-  background: linear-gradient(90deg, #ad1457, #6a1b9a, #1976d2);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientMove 6s ease infinite;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  color: #6a1b9a !important;
 }
 
 @keyframes gradientMove {
@@ -1993,4 +1992,180 @@ section {
   transform: translateY(-8px);
   box-shadow: 0 20px 45px rgba(0,0,0,0.18);
 }
+
+/* ================================
+   Why CRM – Soft Purple Background
+   ================================ */
+
+section.why-crm-section {
+  background: linear-gradient(
+    180deg,
+    #dcc5db 0%,
+    #a475c8 100%
+  ) !important;
+  padding: 70px 0;
+}
+
+/* Cards stay clean white */
+.why-crm-section .crm-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 14px 32px rgba(106, 27, 154, 0.08);
+}
+
+/* Darken subtitle text in Why CRM section */
+.why-crm-section p {
+  color: #4b4b6b !important;  /* soft dark violet-grey */
+}
+
+
+.crm-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 28px 22px;
+  text-align: center;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.crm-card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+
+.crm-card h6 {
+  font-weight: 700;
+  color: #333;
+  margin-top: 15px;
+}
+
+.crm-card p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.crm-icon {
+  font-size: 36px;
+  color: #6a1b9a;
+}
+.feature-icon-circle {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #ad1457, #6a1b9a);
+  border-radius: 50%; /* perfect circle */
+}
+
+/* ==============================
+   SEO Landing Keyword Section
+================================= */
+
+/* #seo-keywords .seo-card {
+  background: #ffffff;
+  padding: 28px 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(106, 27, 154, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+} */
+
+/* #seo-keywords .seo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(106, 27, 154, 0.18);
+} */
+
+/* #seo-keywords .seo-card a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #4a148c;
+  text-decoration: none;
+  transition: 0.3s ease;
+} */
+
+/* #seo-keywords .seo-card a:hover {
+  color: #ad1457;
+} */
+
+/* ======================================
+   CRM SPLIT SECTION (2 Column Layout)
+====================================== */
+
+/* Fine tune spacing between CRM section and Features */
+.crm-split-section {
+  margin-bottom: 20px;   /* small clean gap */
+}
+
+#features {
+  padding-top: 20px;     /* reduce top space */
+}
+
+.crm-row {
+  margin-bottom: 80px;
+}
+
+.crm-content h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ad1457;
+  margin-bottom: 20px;
+}
+
+.crm-content p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.crm-list {
+  list-style: none;
+  padding: 0;
+}
+
+.crm-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  color: #555;
+}
+
+.crm-list li:before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #ad1457;
+  font-weight: bold;
+}
+
+.crm-image img {
+  max-width: 420px;   /* reduced from 520px */
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Mobile Fix */
+@media (max-width: 991px) {
+
+  .crm-row {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .crm-content {
+    margin-top: 30px;
+  }
+
+  .crm-image img {
+    max-width: 100%;
+  }
+
+}
+
+
+
 
